@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="ProgressBar.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProgressBar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Page.Resources>
+        <Style x:Key="SmallBorderStyle" TargetType="Border">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Black" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Width="500" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Margin="0,20">Regular bar</TextBlock>
+            <Border Style="{StaticResource SmallBorderStyle}">
+                <ProgressBar IsIndeterminate="True" IsEnabled="True" x:Name="ProgressBar" />
+            </Border>
+            
+            <TextBlock Margin="0,20">Upped MinHeight</TextBlock>
+            <Border Style="{StaticResource SmallBorderStyle}">
+                <ProgressBar IsIndeterminate="True" IsEnabled="True" MinHeight="20" />
+            </Border>
+
+            <TextBlock Margin="0,20">Using Viewbox</TextBlock>
+            <Border Style="{StaticResource SmallBorderStyle}">
+                <Viewbox>
+                    <!-- width divided by 3 > resized by viewbox to size times 3 -->
+                    <ProgressBar IsIndeterminate="True" IsEnabled="True" Width="166" />
+                </Viewbox>
+            </Border>
+
+            <TextBlock Margin="0,20">Edited default template</TextBlock>
+            <Border Style="{StaticResource SmallBorderStyle}">
+                <ProgressBar IsIndeterminate="True" IsEnabled="True" Style="{StaticResource EditedDefaultTemplate}" />
+            </Border>
+
+            <TextBlock Margin="0,20">Custom templated control</TextBlock>
+            <Border Style="{StaticResource SmallBorderStyle}">
+                <local:MyProgressBar IsIndeterminate="True" IsEnabled="True" />
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>
