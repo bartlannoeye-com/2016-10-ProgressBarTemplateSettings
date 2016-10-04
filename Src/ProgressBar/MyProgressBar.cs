@@ -33,6 +33,7 @@ namespace ProgressBar
             ContainerAnimationEndPosition = progressBar.ActualWidth * 3/8;
             EllipseAnimationEndPosition = progressBar.ActualWidth * 2/3;
             EllipseAnimationWellPosition = progressBar.ActualWidth / 3;
+            EllipseOffset = 4;
             EllipseDiameter = 12;
         }
 
